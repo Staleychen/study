@@ -12,3 +12,6 @@ end
 K = assembleK(nodes, elems, E);
 fprintf('size(K) = %dx%d\n', size(K,1), size(K,2));
 fprintf('rank(full(K)) = %d\n', rank(full(K)));
+
+F = makeLoads(nodes, elems);
+fprintf('size(F.DL) = %dx1\n', numel(F.DL));
