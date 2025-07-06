@@ -15,3 +15,6 @@ fprintf('rank(full(K)) = %d\n', rank(full(K)));
 
 F = makeLoads(nodes, elems);
 fprintf('size(F.DL) = %dx1\n', numel(F.DL));
+
+Kbuilder = @(n,e) assembleK(n,e,E);
+[reqA, delta_srv, U_srv, elems] = solveServiceLoop(nodes, elems, Kbuilder, F);
